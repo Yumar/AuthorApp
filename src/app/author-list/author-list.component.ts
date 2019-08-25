@@ -13,7 +13,7 @@ export class AuthorListComponent implements OnInit {
   constructor(private service: AuthorService ) { }
 
   ngOnInit() {
-    this.authors = this.service.getAll();
+    this.service.getAll().subscribe(data => this.authors = data);
   }
 
 }

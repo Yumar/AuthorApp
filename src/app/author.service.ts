@@ -11,7 +11,7 @@ export class AuthorService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any>{
-    return from(this.autors);
+    return this.http.get<any>('../assets/authors.json');
   }
 
   
