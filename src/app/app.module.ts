@@ -10,7 +10,9 @@ import {
   MatRippleModule,
   MatFormFieldModule,
   MatTooltipModule,
-  MatSelectModule
+  MatSelectModule,
+  MatButtonToggleModule,
+  MatIconModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -40,6 +42,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatButtonToggleModule,
+    MatIconModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,0 +1,21 @@
+.card--big{
+    width: 80vw !important;
+    height: 70vh !important;
+}
+
+.card__profile-photo {
+    max-height: 35vh;
+}
+
+.card__profile {
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+
+.card__profile-form {
+    padding-right: 2vw;
+}
+
+.card__profile__fav-btn {
+    margin-top: 1vh;
+}
