@@ -12,7 +12,10 @@ import {
   MatTooltipModule,
   MatSelectModule,
   MatButtonToggleModule,
-  MatIconModule
+  MatIconModule,
+  MatTableModule,
+  MatNativeDateModule,
+  MatDatepickerModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -44,6 +47,9 @@ import { AppRoutingModule } from './app-routing.module';
     MatTooltipModule,
     MatButtonToggleModule,
     MatIconModule,
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     AppRoutingModule
   ],
   providers: [],

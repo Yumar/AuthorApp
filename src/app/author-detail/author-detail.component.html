@@ -11,16 +11,21 @@
         </mat-button-toggle>
       </div>
       <div fxFlex="70">
+        <h3>Personal Information</h3>
         <form class="card__profile-form">
           <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="10px">
             <mat-form-field fxFlex>
               <input matInput placeholder="Name" value="Sushi">
             </mat-form-field>
             <mat-form-field fxFlex>
-              <input matInput placeholder="Birthdate" value="Sushi">
+              <input matInput [matDatepicker]="birthdate" placeholder="Date of Birth">
+              <mat-datepicker-toggle matSuffix [for]="birthdate"></mat-datepicker-toggle>
+              <mat-datepicker #birthdate></mat-datepicker>
             </mat-form-field>
             <mat-form-field fxFlex>
-              <input matInput placeholder="Date of death" value="Sushi">
+              <input matInput [matDatepicker]="deathdate" placeholder="Date of death">
+              <mat-datepicker-toggle matSuffix [for]="deathdate"></mat-datepicker-toggle>
+              <mat-datepicker #deathdate></mat-datepicker>
             </mat-form-field>
           </div>
           <div fxLayout="row">
@@ -29,7 +34,7 @@
             </mat-form-field>
           </div>
           <div fxLayout="row">
-            <app-publication-list></app-publication-list>
+            <app-publication-list fxFlex></app-publication-list>
           </div>
         </form>
       </div>
