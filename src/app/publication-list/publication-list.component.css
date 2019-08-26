@@ -1,0 +1,8 @@
+.card__publications-table {
+    width: 100%;
+}
+
+.publications-container{
+    overflow-y: auto;
+    max-height: 23vh;
+}
