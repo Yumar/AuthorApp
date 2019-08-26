@@ -3,6 +3,6 @@
 }
 
 .publications-container{
-    overflow-y: scroll;
-    max-height: 35vh;
+    overflow-y: auto;
+    max-height: 23vh;
 }
