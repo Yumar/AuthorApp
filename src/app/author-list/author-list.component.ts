@@ -16,8 +16,9 @@ export class AuthorListComponent implements OnInit {
     this.service.getAll().subscribe(data => this.authors = data);
   }
 
-  toggleStar(id:string, fav:boolean){
-    this.service.toggleStar(id, fav);
+  toggleStar(id:string, author:any){
+    author.favorite = !author.favorite;
+    this.service.toggleStar(id, author.favorite);
   }
 
 }

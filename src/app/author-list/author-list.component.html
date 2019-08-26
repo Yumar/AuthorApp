@@ -9,7 +9,7 @@
             <p>{{author.resume | truncate}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button (click)="toggleStar(author.id, author.favorite)"><mat-icon>{{author.favorite? 'star': 'star_border'}}</mat-icon> STAR</button>
+            <button mat-button (click)="toggleStar(author.id, author)"><mat-icon>{{author.favorite? 'star': 'star_border'}}</mat-icon> STAR</button>
             <button mat-button [routerLink]="['/list/', author.id]">DETAILS</button>
         </mat-card-actions>
     </mat-card>
