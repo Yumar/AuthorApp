@@ -5,36 +5,39 @@
   <mat-card-content>
     <div fxLayout="row">
       <div fxFlex="30" fxLayout="column" class="card__profile">
-        <img class="card__profile-photo" src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-button-toggle class="card__profile__fav-btn" value="star">
-          <mat-icon>star</mat-icon>Favorite
-        </mat-button-toggle>
+        <img class="card__profile-photo" [src]="author.photoUrl" />
+        <button (click)="toggleStar()" mat-button class="card__profile__fav-btn">
+          <mat-icon>{{author.favorite? 'star': 'star_border'}}</mat-icon> STAR
+        </button>
+        <button class="card__profile__fav-btn" *ngIf="!editMode" (click)="enableEditing()" mat-raised-button color="primary">Edit</button>
+        <button class="card__profile__fav-btn" *ngIf="editMode" (click)="saveAuthor()" mat-raised-button color="primary">Save</button>
+        <button class="card__profile__fav-btn" *ngIf="editMode" (click)="deleteAuthor()" mat-raised-button color="warn">Delete</button>
       </div>
       <div fxFlex="70">
         <h3>Personal Information</h3>
         <form class="card__profile-form">
           <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="10px">
             <mat-form-field fxFlex>
-              <input matInput placeholder="Name" value="Sushi">
+              <input [readonly]="!editMode" matInput placeholder="Name" [(value)]="author.name">
             </mat-form-field>
             <mat-form-field fxFlex>
-              <input matInput [matDatepicker]="birthdate" placeholder="Date of Birth">
+              <input matInput [readonly]="!editMode" [matDatepicker]="birthdate" placeholder="Date of Birth" [(value)]="author.birthDate">
               <mat-datepicker-toggle matSuffix [for]="birthdate"></mat-datepicker-toggle>
               <mat-datepicker #birthdate></mat-datepicker>
             </mat-form-field>
             <mat-form-field fxFlex>
-              <input matInput [matDatepicker]="deathdate" placeholder="Date of death">
+              <input matInput [readonly]="!editMode" [matDatepicker]="deathdate" placeholder="Date of death" [(value)]="author.deathDate">
               <mat-datepicker-toggle matSuffix [for]="deathdate"></mat-datepicker-toggle>
               <mat-datepicker #deathdate></mat-datepicker>
             </mat-form-field>
           </div>
           <div fxLayout="row">
             <mat-form-field fxFlex>
-              <textarea cdkTextareaAutosize matInput placeholder="Resume"></textarea>
+              <textarea [readonly]="!editMode" cdkTextareaAutosize cdkAutosizeMinRows=8 matInput placeholder="Resume" [(value)]="author.resume"></textarea>
             </mat-form-field>
           </div>
           <div fxLayout="row">
-            <app-publication-list fxFlex></app-publication-list>
+            <app-publication-list [(publications)]="author.publications" fxFlex></app-publication-list>
           </div>
         </form>
       </div>

@@ -20,6 +20,7 @@ import {
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TruncatePipe } from "./commons/truncate.pipe";
 import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { PublicationListComponent } from './publication-list/publication-list.component';
@@ -28,6 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
+    TruncatePipe,
     AuthorListComponent,
     AuthorDetailComponent,
     PublicationListComponent
